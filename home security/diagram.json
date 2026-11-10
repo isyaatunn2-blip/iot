@@ -1,0 +1,118 @@
+{
+  "version": 1,
+  "author": "Smart Home Security System - ESP32",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "wokwi-esp32-devkit-v1",
+      "id": "esp",
+      "top": 40,
+      "left": 20,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-pir-motion-sensor",
+      "id": "pir1",
+      "top": -110,
+      "left": -130,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-hc-sr04",
+      "id": "ultrasonic1",
+      "top": -120,
+      "left": 10,
+      "attrs": { "distance": "120" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn1",
+      "top": 240,
+      "left": 190,
+      "attrs": { "color": "blue", "label": "ARM / DISARM" }
+    },
+    {
+      "type": "wokwi-lcd1602",
+      "id": "lcd1",
+      "top": -90,
+      "left": 240,
+      "attrs": { "pins": "i2c" }
+    },
+    {
+      "type": "wokwi-buzzer",
+      "id": "bz1",
+      "top": 80,
+      "left": 280,
+      "attrs": { "volume": "0.1" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led_green",
+      "top": 60,
+      "left": -150,
+      "attrs": { "color": "green", "label": "DISARM (AMAN)" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led_yellow",
+      "top": 130,
+      "left": -150,
+      "attrs": { "color": "yellow", "label": "ARM (SIAGA)" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led_red",
+      "top": 200,
+      "left": -150,
+      "attrs": { "color": "red", "label": "ALARM" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": 85,
+      "left": -90,
+      "attrs": { "value": "220" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r2",
+      "top": 155,
+      "left": -90,
+      "attrs": { "value": "220" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r3",
+      "top": 225,
+      "left": -90,
+      "attrs": { "value": "220" }
+    }
+  ],
+  "connections": [
+    [ "pir1:VCC", "esp:VIN", "red", [ "v0" ] ],
+    [ "pir1:GND", "esp:GND.1", "black", [ "v0" ] ],
+    [ "pir1:OUT", "esp:D19", "orange", [ "v0" ] ],
+    [ "ultrasonic1:VCC", "esp:VIN", "red", [ "v0" ] ],
+    [ "ultrasonic1:GND", "esp:GND.1", "black", [ "v0" ] ],
+    [ "ultrasonic1:TRIG", "esp:D5", "blue", [ "v0" ] ],
+    [ "ultrasonic1:ECHO", "esp:D18", "cyan", [ "v0" ] ],
+    [ "btn1:1.l", "esp:D4", "purple", [ "h-40", "v-90" ] ],
+    [ "btn1:2.l", "esp:GND.1", "black", [ "h-50", "v-60" ] ],
+    [ "lcd1:VCC", "esp:VIN", "red", [ "h-30", "v180" ] ],
+    [ "lcd1:GND", "esp:GND.1", "black", [ "h-40", "v170" ] ],
+    [ "lcd1:SDA", "esp:D21", "green", [ "h-50", "v160" ] ],
+    [ "lcd1:SCL", "esp:D22", "yellow", [ "h-60", "v130" ] ],
+    [ "bz1:1", "esp:GND.2", "black", [ "v0" ] ],
+    [ "bz1:2", "esp:D25", "magenta", [ "v0" ] ],
+    [ "esp:D14", "r1:2", "green", [ "h0" ] ],
+    [ "r1:1", "led_green:A", "green", [ "h0" ] ],
+    [ "led_green:C", "esp:GND.2", "black", [ "v0" ] ],
+    [ "esp:D27", "r2:2", "gold", [ "h0" ] ],
+    [ "r2:1", "led_yellow:A", "gold", [ "h0" ] ],
+    [ "led_yellow:C", "esp:GND.2", "black", [ "v0" ] ],
+    [ "esp:D13", "r3:2", "red", [ "h0" ] ],
+    [ "r3:1", "led_red:A", "red", [ "h0" ] ],
+    [ "led_red:C", "esp:GND.2", "black", [ "v0" ] ]
+  ],
+  "dependencies": {}
+}
