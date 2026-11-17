@@ -1,0 +1,82 @@
+{
+  "version": 1,
+  "author": "ESP32 12 Servo Project",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "board-esp32-devkit-c-v4",
+      "id": "esp",
+      "top": 0,
+      "left": 0,
+      "attrs": {}
+    },
+    { "type": "wokwi-servo", "id": "servo1", "top": -160, "left": -240, "attrs": {} },
+    { "type": "wokwi-servo", "id": "servo2", "top": -80, "left": -280, "attrs": {} },
+    { "type": "wokwi-servo", "id": "servo3", "top": 0, "left": -300, "attrs": {} },
+    { "type": "wokwi-servo", "id": "servo4", "top": 80, "left": -320, "attrs": {} },
+    { "type": "wokwi-servo", "id": "servo5", "top": 160, "left": -300, "attrs": {} },
+    { "type": "wokwi-servo", "id": "servo6", "top": 240, "left": -250, "attrs": {} },
+    { "type": "wokwi-servo", "id": "servo7", "top": -120, "left": 180, "attrs": {} },
+    { "type": "wokwi-servo", "id": "servo8", "top": -40, "left": 240, "attrs": {} },
+    { "type": "wokwi-servo", "id": "servo9", "top": 30, "left": 220, "attrs": {} },
+    { "type": "wokwi-servo", "id": "servo10", "top": 100, "left": 200, "attrs": {} },
+    { "type": "wokwi-servo", "id": "servo11", "top": 170, "left": 180, "attrs": {} },
+    { "type": "wokwi-servo", "id": "servo12", "top": 240, "left": 200, "attrs": {} }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+
+    [ "servo1:V+", "esp:5V", "red", [ "h0" ] ],
+    [ "servo1:GND", "esp:GND.1", "black", [ "h0" ] ],
+    [ "servo1:PWM", "esp:13", "orange", [ "h0" ] ],
+
+    [ "servo2:V+", "esp:5V", "red", [ "h0" ] ],
+    [ "servo2:GND", "esp:GND.1", "black", [ "h0" ] ],
+    [ "servo2:PWM", "esp:12", "orange", [ "h0" ] ],
+
+    [ "servo3:V+", "esp:5V", "red", [ "h0" ] ],
+    [ "servo3:GND", "esp:GND.1", "black", [ "h0" ] ],
+    [ "servo3:PWM", "esp:14", "orange", [ "h0" ] ],
+
+    [ "servo4:V+", "esp:5V", "red", [ "h0" ] ],
+    [ "servo4:GND", "esp:GND.1", "black", [ "h0" ] ],
+    [ "servo4:PWM", "esp:27", "orange", [ "h0" ] ],
+
+    [ "servo5:V+", "esp:5V", "red", [ "h0" ] ],
+    [ "servo5:GND", "esp:GND.1", "black", [ "h0" ] ],
+    [ "servo5:PWM", "esp:26", "orange", [ "h0" ] ],
+
+    [ "servo6:V+", "esp:5V", "red", [ "h0" ] ],
+    [ "servo6:GND", "esp:GND.1", "black", [ "h0" ] ],
+    [ "servo6:PWM", "esp:25", "orange", [ "h0" ] ],
+
+    [ "servo7:V+", "esp:5V", "red", [ "h0" ] ],
+    [ "servo7:GND", "esp:GND.2", "black", [ "h0" ] ],
+    [ "servo7:PWM", "esp:23", "orange", [ "h0" ] ],
+
+    [ "servo8:V+", "esp:5V", "red", [ "h0" ] ],
+    [ "servo8:GND", "esp:GND.2", "black", [ "h0" ] ],
+    [ "servo8:PWM", "esp:22", "orange", [ "h0" ] ],
+
+    [ "servo9:V+", "esp:5V", "red", [ "h0" ] ],
+    [ "servo9:GND", "esp:GND.2", "black", [ "h0" ] ],
+    [ "servo9:PWM", "esp:21", "orange", [ "h0" ] ],
+
+    [ "servo10:V+", "esp:5V", "red", [ "h0" ] ],
+    [ "servo10:GND", "esp:GND.2", "black", [ "h0" ] ],
+    [ "servo10:PWM", "esp:19", "orange", [ "h0" ] ],
+
+    [ "servo11:V+", "esp:5V", "red", [ "h0" ] ],
+    [ "servo11:GND", "esp:GND.2", "black", [ "h0" ] ],
+    [ "servo11:PWM", "esp:18", "orange", [ "h0" ] ],
+
+    [ "servo12:V+", "esp:5V", "red", [ "h0" ] ],
+    [ "servo12:GND", "esp:GND.2", "black", [ "h0" ] ],
+    [ "servo12:PWM", "esp:5", "orange", [ "h0" ] ]
+  ],
+  "dependencies": {}
+}
+
+
+
